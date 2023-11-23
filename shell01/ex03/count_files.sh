@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-find . -type f | wc -l
+find . | wc -l
