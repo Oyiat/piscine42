@@ -6,16 +6,17 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 16:14:29 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/23 16:43:00 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/24 07:31:22 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
+//#include <stdio.h>
 
 void	ft_ultimate_ft(int *********nbr)
 {
 	*********nbr = 42;
 }
-
+/*
 int	main(void)
 {
 	int number = 0;
@@ -34,3 +35,4 @@ int	main(void)
 	ft_ultimate_ft(pt_number9);
 	printf("%d", number);
 }
+*/

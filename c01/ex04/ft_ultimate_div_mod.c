@@ -1,29 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:02:00 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/24 07:31:56 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 07:49:43 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/24 08:12:48 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-void	ft_ft(int *nbr)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	*nbr = 42;
+	int	div;
+	int	mod;
+
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
 /*
 int	main(void)
 {
-	int number = 0;
-	int* pt_number = &number;
+	int	a;
+	int	b;
+	int*	pt_a;
+	int* 	pt_b;
 	
-	printf("%d -> ", number);
-	ft_ft(pt_number);
-	printf("%d", number);
+	a = 10;
+	b = 2;
+	pt_a = &a;
+	pt_b = &b;
+	
+	printf("%d / %d = ", a, b);	
+	ft_ultimate_div_mod(pt_a, pt_b);
+	printf("%d (%d)\n", *pt_a, *pt_b);
+
+	a = 15;
+	b = 4;
+	printf("%d / %d = ", a, b);
+        ft_ultimate_div_mod(pt_a, pt_b);
+        printf("%d (%d)", *pt_a, *pt_b);
+
 }
 */

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:02:00 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/24 07:31:56 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 08:21:00 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/24 09:01:21 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-void	ft_ft(int *nbr)
+int	ft_strlen(char *str)
 {
-	*nbr = 42;
+	int	length;
+
+	length = 0;
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	return (length);
 }
 /*
 int	main(void)
 {
-	int number = 0;
-	int* pt_number = &number;
-	
-	printf("%d -> ", number);
-	ft_ft(pt_number);
-	printf("%d", number);
+	printf("%d", ft_strlen("Hello 42!"));
 }
 */

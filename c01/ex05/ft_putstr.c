@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:02:00 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/24 07:31:56 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 08:13:35 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/24 08:42:27 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-//#include <stdio.h>
-
-void	ft_ft(int *nbr)
+void	ft_putstr(char *str)
 {
-	*nbr = 42;
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], sizeof(char));
+		i++;
+	}
 }
 /*
 int	main(void)
 {
-	int number = 0;
-	int* pt_number = &number;
-	
-	printf("%d -> ", number);
-	ft_ft(pt_number);
-	printf("%d", number);
+	ft_putstr("Hello 42!");
 }
 */

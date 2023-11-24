@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:02:00 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/24 07:31:56 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 07:33:15 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/24 07:49:22 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+//#include<stdio.h>
 
-void	ft_ft(int *nbr)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	*nbr = 42;
+	*div = a / b;
+	*mod = a % b;
 }
 /*
 int	main(void)
-{
-	int number = 0;
-	int* pt_number = &number;
+{	
+	int	a;
+	int 	b;
+	int	div;
+	int	mod;
+	int*	pt_div;
+	int*	pt_mod;
 	
-	printf("%d -> ", number);
-	ft_ft(pt_number);
-	printf("%d", number);
+	a = 10;
+	b = 2;
+	div = 0;
+	mod = 0;
+	pt_div = &div;
+	pt_mod = &mod;
+
+	ft_div_mod(a, b, pt_div, pt_mod);
+	printf("%d / %d = %d (%d)\n", a, b, div, mod);
+	
+	a = 15;
+	b = 4;
+	ft_div_mod(a, b, pt_div, pt_mod);	
+	printf("%d / %d = %d (%d)", a, b, div, mod);
 }
 */
