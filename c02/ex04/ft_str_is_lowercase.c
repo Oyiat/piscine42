@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 08:13:35 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/24 11:27:09 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/25 10:29:39 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/25 13:37:30 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-void	ft_putstr(char *str)
+//#include <stdio.h>
+
+int	ft_str_is_lowercase(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		write(1, &str[i], sizeof(char));
+		if (!(str[i] >= 'a' && str[i] <= 'z'))
+		{
+			return (0);
+		}
 		i++;
 	}
+	return (1);
 }
-/*
-int	main(void)
-{
-	ft_putstr("Hello 42!");
 
-	return (0);
+/*
+int	main(int argc, char *argv[])
+{
+	printf("%d\n", ft_str_is_lowercase("hello"));
+	printf("%d\n", ft_str_is_lowercase("HELLO"));
+	printf("%d\n", ft_str_is_lowercase("Hello 42!"));
+	printf("%d\n", ft_str_is_lowercase(""));
+	return(0);
 }
 */

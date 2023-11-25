@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:02:00 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/25 09:07:31 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/25 10:29:39 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/25 10:51:43 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
-void	ft_ft(int *nbr)
+int	ft_str_is_alpha(char *str)
 {
-	*nbr = 42;
-}
-int	main(void)
-{
-	int	number = 0;
-	int	*pt_number = &number;
-	
-	printf("%d -> ", number);
-	ft_ft(pt_number);
-	printf("%d", number);
+	int	i;
 
-	return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (!(str[i] >= 'A' && str[i] <= 'Z' || str[i] >= 'a' && str[i] <= 'z'))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
+/*
+int	main(int argc, char *argv[])
+{
+	printf("%d\n", ft_str_is_alpha("Hello"));
+	printf("%d\n", ft_str_is_alpha("Hello 42!"));
+	printf("%d\n", ft_str_is_alpha(""));
+	return(0);
+}
+*/

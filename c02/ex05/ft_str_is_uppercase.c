@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 15:02:00 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/25 09:07:31 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/25 10:29:39 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/25 13:41:22 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_ft(int *nbr)
+int	ft_str_is_uppercase(char *str)
 {
-	*nbr = 42;
-}
-int	main(void)
-{
-	int	number = 0;
-	int	*pt_number = &number;
-	
-	printf("%d -> ", number);
-	ft_ft(pt_number);
-	printf("%d", number);
+	int	i;
 
-	return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	main(int argc, char *argv[])
+{
+	printf("%d\n", ft_str_is_uppercase("HELLO"));
+	printf("%d\n", ft_str_is_uppercase("hello"));
+	printf("%d\n", ft_str_is_uppercase("Hello 42!"));
+	printf("%d\n", ft_str_is_uppercase(""));
+	return(0);
 }

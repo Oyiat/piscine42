@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 07:33:15 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/24 07:49:22 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/24 11:25:59 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	main(void)
 	int 	b;
 	int	div;
 	int	mod;
-	int*	pt_div;
-	int*	pt_mod;
+	int 	*pt_div;
+	int 	*pt_mod;
 	
 	a = 10;
 	b = 2;
@@ -41,5 +41,7 @@ int	main(void)
 	b = 4;
 	ft_div_mod(a, b, pt_div, pt_mod);	
 	printf("%d / %d = %d (%d)", a, b, div, mod);
+	
+	return (0);
 }
 */
