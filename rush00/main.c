@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 08:07:46 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/25 14:49:53 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/25 14:51:24 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/25 15:47:46 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void    rush(int, int);
 
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src)
+int	main(void)
 {
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;	
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-int	main(int argc, char *argv[])
-{
-	char	string1[] = "Hello 42!";
-	char	string2[] = "tes";
-	
-	printf("%s", ft_strcpy(string2, string1));
+	rush(5, 3);
+	/*rush(5, 1);
+	rush(1, 1);
+	rush(1, 5);
+	rush(4, 4);*/
+	return (0);
 }

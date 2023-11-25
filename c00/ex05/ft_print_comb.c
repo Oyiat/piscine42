@@ -24,7 +24,7 @@ void	ft_print_comb(void)
 		{
 			while (digits[2] <= '9')
 			{
-				write(1, digits, sizeof(digits));
+				write(1, digits, 3);
 				if (!(digits[0] == '7' && digits[1] == '8' && digits[2] == '9'))
 					write(1, ", ", 2);
 				digits[2]++;
@@ -36,12 +36,10 @@ void	ft_print_comb(void)
 		digits[1] = digits[0] + 1;
 		digits[2] = digits[1] + 1;
 	}
-	write(1, "\n", 1);
 }
-/*
+
 int main(void) 
 {
 	ft_print_comb();	
 	return (0);
 }
-*/

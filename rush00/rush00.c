@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 08:07:46 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/25 14:49:53 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/25 14:56:23 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/25 17:39:52 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void    ft_putchar(char);
+//void    print_rectangle(int, int, int, int);
 
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src)
+void	fill(int i, int j, char rectangle[i][j])
 {
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;	
-	}
-	dest[i] = '\0';
-	return (dest);
+	if (i == 0 && j == 0)
+		rectangle[i][j] = 'o';
 }
-int	main(int argc, char *argv[])
+
+void	rush(int x, int y)
 {
-	char	string1[] = "Hello 42!";
-	char	string2[] = "tes";
+	char	rectangle[x][y];
+	int		i;
+	int		j;
 	
-	printf("%s", ft_strcpy(string2, string1));
+	i = 0;
+	while (i < x)
+	{
+		j = 0;
+		while (j < y)
+		{
+			fill(i, j, rectangle);
+			ft_putchar(rectangle[i][j]);	
+			j++;
+		}
+		i++;
+	}
 }

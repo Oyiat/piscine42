@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 08:07:46 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/25 14:49:53 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/25 14:55:02 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/25 14:56:15 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-#include <stdio.h>
-
-char	*ft_strcpy(char *dest, char *src)
+// Display the character passed as a parameter
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;	
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-int	main(int argc, char *argv[])
-{
-	char	string1[] = "Hello 42!";
-	char	string2[] = "tes";
-	
-	printf("%s", ft_strcpy(string2, string1));
+	write(1, &c, 1);
 }
