@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:56:48 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/23 09:56:05 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/26 10:03:58 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -23,13 +23,3 @@ void	ft_is_negative(int n)
 		write(1, "N", 1);
 	}
 }
-
-/*
-int main(void)
-{
-	ft_is_negative(-3);
-	ft_is_negative(0);
-	ft_is_negative(3);
-	return (0);
-}
-*/

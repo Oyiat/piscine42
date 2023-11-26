@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 10:29:39 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/25 13:30:38 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/26 15:41:47 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/26 16:02:50 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_str_is_numeric(char *str)
+char	*ft_strupcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
 		i++;
 	}
-	return (1);
+	return (str);
 }

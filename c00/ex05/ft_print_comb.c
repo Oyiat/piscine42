@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:37:35 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/25 07:21:36 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/26 10:04:21 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -36,10 +36,4 @@ void	ft_print_comb(void)
 		digits[1] = digits[0] + 1;
 		digits[2] = digits[1] + 1;
 	}
-}
-
-int main(void) 
-{
-	ft_print_comb();	
-	return (0);
 }
