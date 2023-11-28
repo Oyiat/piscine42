@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 08:07:24 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 09:01:31 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:16:50 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strstr(char *str, char *to_find)
@@ -28,7 +28,7 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return ("");
+	return (0);
 }
 /*
 #include <stdio.h>

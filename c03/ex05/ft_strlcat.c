@@ -6,19 +6,19 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 08:08:02 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 08:58:10 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:52:54 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strlen(char *str)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	while (str[length] != '\0')
+	i = 0;
+	while (str[i])
 	{
-		length++;
+		i++;
 	}
-	return (length);
+	return (i);
 }
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
@@ -35,8 +35,14 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		dest[i + dest_length] = src[i];
 		i++;
 	}
-	dest[i + dest_length] = '\0';
-	return (dest_length + src_length);
+	if (size != 0)
+	{
+		dest[i + dest_length] = '\0';
+	}
+
+	if ((dest_length + src_length) < size)
+		return (dest_length + src_length);
+	return (size);
 }
 /*
 #include <stdio.h>
@@ -49,7 +55,7 @@ int main(void)
 
     char dest2[50] = "Hello ";
     char src2[] = "42 Luxembourg!";
-    printf("%u\n", ft_strlcat(dest2, src2, 10));
+    printf("%u\n", ft_strlcat(dest2, src2, 0));
 
     return (0);
 }

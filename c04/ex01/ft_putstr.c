@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 08:21:00 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 14:04:25 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 08:13:35 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/28 14:03:55 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strlen(char *str)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 	{
+		write(1, &str[i], sizeof(char));
 		i++;
 	}
-	return (i);
 }
 /*
-#include <stdio.h>
-
 int	main(void)
 {
-	printf("%d", ft_strlen("Hello 42!"));
+	ft_putstr("Hello 42!");
 
 	return (0);
 }

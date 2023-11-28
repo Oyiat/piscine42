@@ -6,12 +6,12 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:44:12 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/27 16:01:20 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:15:44 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (((unsigned char)s1[i] || (unsigned char)s2[i]) && i < n)
