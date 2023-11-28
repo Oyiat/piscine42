@@ -22,3 +22,35 @@ int	ft_str_is_uppercase(char *str)
 	}
 	return (1);
 }
+/*
+#include <stdio.h>
+
+int main(void)
+{
+    printf("==============\n");
+    printf("HELLO\n");
+    printf("==============\n");
+    printf("Expected: 1\n");
+    printf("Result  : %d\n\n", ft_str_is_uppercase("HELLO"));
+
+    printf("==============\n");
+    printf("Hello\n");
+    printf("==============\n");
+    printf("Expected: 0\n");
+    printf("Result  : %d\n\n", ft_str_is_uppercase("Hello"));
+    
+    printf("==============\n");
+    printf("hello\n");
+    printf("==============\n");
+    printf("Expected: 0\n");
+    printf("Result  : %d\n\n", ft_str_is_uppercase("hello"));
+
+    printf("==============\n");
+    printf("(empty string)\n");
+    printf("==============\n");
+    printf("Expected: 1\n");
+    printf("Result  : %d\n\n", ft_str_is_uppercase(""));
+
+    return 0;
+}
+*/

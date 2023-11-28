@@ -6,23 +6,16 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 16:06:14 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/26 18:01:03 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/27 13:45:27 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
-int	ft_str_is_numeric(char *str)
+int	ft_char_is_alphanumeric(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
-		i++;
-	}
-	return (1);
+	if ((c >= '0' && c <= '9'))
+		return (1);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }
 
 char	*ft_strupcase(char *str)
@@ -58,33 +51,52 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 	int	is_first_letter;
 
-	i = 0;
 	is_first_letter = 1;
+	i = 0;
 	while (str[i])
 	{
-		if((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		if (ft_char_is_alphanumeric(str[i]))
 		{
-			if (is_first_letter && ft_str_is_numeric(&str[i - 1]))
+			if (is_first_letter)
 			{
-				is_first_letter = 0;
 				ft_strupcase(&str[i]);
+				is_first_letter = 0;
 			}
 			else
-			{
 				ft_strlowcase(&str[i]);
-			}
 		}
 		else
-		{
 			is_first_letter = 1;
-		}
 		i++;
 	}
-	return (str);	
+	return (str);
 }
+/*
+#include <stdio.h>
 
 int main(void)
 {
-	char string[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-	printf("%s", ft_strcapitalize(string));
+    char str1[] = "salut, comment tu vas ?";
+    printf("==============\n");
+    printf("hello\n");
+    printf("==============\n");
+    printf("Expected: Salut, Comment Tu Vas ?\n");
+    printf("Result  : %s\n\n", ft_strcapitalize(str1));
+    
+    char str2[] = "42mots quarante-deux; cinquante+et+un";
+    printf("==============\n");
+    printf("hello\n");
+    printf("==============\n");
+    printf("Expected: 42mots Quarante-Deux; Cinquante+Et+Un\n");
+    printf("Result  : %s\n\n", ft_strcapitalize(str2));
+
+    char str3[] = "";
+    printf("==============\n");
+    printf("(empty string)\n");
+    printf("==============\n");
+    printf("Expected: (empty string)\n");
+    printf("Result  : %s\n\n", ft_strcapitalize(str3));
+
+    return 0;
 }
+*/

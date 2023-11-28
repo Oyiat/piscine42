@@ -22,3 +22,29 @@ int	ft_str_is_numeric(char *str)
 	}
 	return (1);
 }
+/*
+#include <stdio.h>
+
+int main(void)
+{   
+    printf("==============\n");
+    printf("42\n");
+    printf("==============\n");
+    printf("Expected: 1\n");
+    printf("Result  : %d\n\n", ft_str_is_numeric("42"));
+
+    printf("==============\n");
+    printf("Hello 42!\n");
+    printf("==============\n");
+    printf("Expected: 0\n");
+    printf("Result  : %d\n\n", ft_str_is_numeric("Hello 42!"));
+
+    printf("==============\n");
+    printf("(empty string)\n");
+    printf("==============\n");
+    printf("Expected: 1\n");
+    printf("Result  : %d\n\n", ft_str_is_numeric(""));
+
+    return 0;
+}
+*/

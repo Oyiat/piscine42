@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/28 08:08:02 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/28 08:58:10 by jlefonde         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+int	ft_strlen(char *str)
+{
+	int	length;
+
+	length = 0;
+	while (str[length] != '\0')
+	{
+		length++;
+	}
+	return (length);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	dest_length;
+	unsigned int	src_length;
+	unsigned int	i;
+
+	dest_length = ft_strlen(dest);
+	src_length = ft_strlen(src);
+	i = 0;
+	while (i < size - dest_length - 1 && src[i])
+	{
+		dest[i + dest_length] = src[i];
+		i++;
+	}
+	dest[i + dest_length] = '\0';
+	return (dest_length + src_length);
+}
+/*
+#include <stdio.h>
+
+int main(void)
+{
+    char dest1[50] = "Hello ";
+    char src1[] = "42!";
+    printf("%u\n", ft_strlcat(dest1, src1, 3));
+
+    char dest2[50] = "Hello ";
+    char src2[] = "42 Luxembourg!";
+    printf("%u\n", ft_strlcat(dest2, src2, 10));
+
+    return (0);
+}
+*/

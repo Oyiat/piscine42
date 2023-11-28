@@ -22,3 +22,35 @@ int	ft_str_is_lowercase(char *str)
 	}
 	return (1);
 }
+/*
+#include <stdio.h>
+
+int main(void)
+{
+    printf("==============\n");
+    printf("hello\n");
+    printf("==============\n");
+    printf("Expected: 1\n");
+    printf("Result  : %d\n\n", ft_str_is_lowercase("hello"));
+
+    printf("==============\n");
+    printf("Hello\n");
+    printf("==============\n");
+    printf("Expected: 0\n");
+    printf("Result  : %d\n\n", ft_str_is_lowercase("Hello"));
+    
+    printf("==============\n");
+    printf("HELLO\n");
+    printf("==============\n");
+    printf("Expected: 0\n");
+    printf("Result  : %d\n\n", ft_str_is_lowercase("HELLO"));
+
+    printf("==============\n");
+    printf("(empty string)\n");
+    printf("==============\n");
+    printf("Expected: 1\n");
+    printf("Result  : %d\n\n", ft_str_is_lowercase(""));
+
+    return 0;
+}
+*/
