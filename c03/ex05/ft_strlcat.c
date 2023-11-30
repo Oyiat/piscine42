@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 08:08:02 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 17:52:54 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:22:11 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strlen(char *str)
@@ -39,7 +39,6 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	{
 		dest[i + dest_length] = '\0';
 	}
-
 	if ((dest_length + src_length) < size)
 		return (dest_length + src_length);
 	return (size);

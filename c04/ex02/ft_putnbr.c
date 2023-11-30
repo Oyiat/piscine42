@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:07:31 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 16:29:07 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:20:20 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -42,7 +42,7 @@ void	ft_putnbr(int nb)
 		i--;
 	}
 }
-
+/*
 int	main(void)
 {
 	ft_putnbr(42);
@@ -60,3 +60,4 @@ int	main(void)
 	ft_putnbr(000);
 	return (0);
 }
+*/

@@ -30,13 +30,13 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
-/*
+
 #include <stdio.h>
 
 int main(void)
 {
-    printf("%s\n", ft_strstr("Hello 42!", "42"));
+    printf("%s\n", ft_strstr("Hello 42!", ""));
     printf("%s\n", ft_strstr("Hello 42!", "50"));
     return (0);
 }
-*/
+
