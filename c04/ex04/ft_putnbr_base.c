@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:35:37 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/29 17:21:53 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:46:41 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -28,7 +28,22 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	is_base_valid(char *base)
+long	ft_print_sign(int nbr)
+{
+	long	nb;
+
+	nb = (long)nbr;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb == 0)
+		ft_putchar('0');
+	return (nb);
+}
+
+int	ft_is_base_valid(char *base)
 {
 	int	i;
 	int	j;
@@ -54,23 +69,18 @@ int	is_base_valid(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	digits[10];
-	int	i;
+	int		digits[10];
+	int		i;
+	long	nb;
 
-	if (is_base_valid(base))
+	if (ft_is_base_valid(base))
 	{
 		i = 0;
-		if (nbr < 0)
+		nb = ft_print_sign(nbr);
+		while (nb)
 		{
-			ft_putchar('-');
-			nbr = -nbr;
-		}
-		if (nbr == 0)
-			ft_putchar('0');
-		while (nbr)
-		{
-			digits[i++] = (nbr % ft_strlen(base));
-			nbr /= ft_strlen(base);
+			digits[i++] = (nb % ft_strlen(base));
+			nb /= ft_strlen(base);
 		}
 		i--;
 		while (i >= 0)
@@ -99,6 +109,10 @@ int	main(void)
 	ft_putnbr_base(-42, "0123456789ABCDEF");
 	ft_putchar('\n');
 	ft_putnbr_base(-42, "poneyvif");
+	ft_putchar('\n');
+	ft_putnbr_base(-2147483648, "0123456789");
+	ft_putchar('\n');
+	ft_putnbr_base(2147483647, "0123456789");
 	return (0);
 }
 */

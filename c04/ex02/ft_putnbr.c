@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:07:31 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/29 17:20:20 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:26:55 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -18,21 +18,23 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	int	digits[10];
-	int	i;
+	int		digits[10];
+	int		i;
+	long	nbr;
 
 	i = 0;
-	if (nb < 0)
+	nbr = (long)nb;
+	if (nbr < 0)
 	{
 		ft_putchar('-');
-		nb = -nb;
+		nbr = -nbr;
 	}
-	if (nb == 0)
+	if (nbr == 0)
 		ft_putchar('0');
-	while (nb)
+	while (nbr)
 	{
-		digits[i] = (nb % 10);
-		nb /= 10;
+		digits[i] = (nbr % 10);
+		nbr /= 10;
 		i++;
 	}
 	i--;
@@ -49,7 +51,7 @@ int	main(void)
 	ft_putchar('\n');
 	ft_putnbr(-42);
 	ft_putchar('\n');
-	ft_putnbr(-2147483647);
+	ft_putnbr(-2147483648);
 	ft_putchar('\n');
 	ft_putnbr(2147483647);
 	ft_putchar('\n');
