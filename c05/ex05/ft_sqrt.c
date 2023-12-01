@@ -9,9 +9,9 @@
 /*   Updated: 2023/11/30 17:11:04 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-	int sqrt;
+	int	sqrt;
 
 	sqrt = 0;
 	while (sqrt * sqrt != nb)
@@ -20,9 +20,9 @@ int ft_sqrt(int nb)
 			return (0);
 		sqrt++;
 	}
-	return sqrt;
+	return (sqrt);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -30,3 +30,4 @@ int	main(void)
 	printf("%d", ft_sqrt(1));
 	return (0);
 }
+*/
