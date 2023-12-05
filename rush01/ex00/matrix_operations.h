@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   matrix_operations.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 09:24:32 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/01 09:27:20 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/12/03 12:35:46 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/12/03 13:11:59 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#ifndef MATRIX_OPERATIONS_H
+#define MATRIX_OPERATIONS_H
 
-void	ft_putstr(char *str)
-{
-	int	i;
+void	ft_fill_matrix(char *str, int ***matrix, int dimensions);
+void	ft_init_matrix(char *str, int ***matrix, int dimensions);
+void	ft_print_matrix(int **matrix, int dimensions);
+void	ft_free_matrix(int **matrix, int dimensions);
+int		ft_is_input_valid(int argc, char **argv);
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], sizeof(char));
-		i++;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	argc = 0;
-	ft_putstr(argv[0]);
-	write(1, "\n", 1);
-	return (0);
-}
+#endif // MATRIX_OPERATIONS_H

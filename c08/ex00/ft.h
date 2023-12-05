@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 09:24:32 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/01 09:27:20 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/12/04 11:36:55 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/12/04 11:39:53 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#ifndef FT_H
+# define FT_H
 
-void	ft_putstr(char *str)
-{
-	int	i;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], sizeof(char));
-		i++;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	argc = 0;
-	ft_putstr(argv[0]);
-	write(1, "\n", 1);
-	return (0);
-}
+#endif // FT_H

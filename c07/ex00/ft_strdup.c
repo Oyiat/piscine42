@@ -1,39 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 09:27:50 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/01 09:31:03 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/12/01 10:44:52 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/12/04 12:44:49 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		write(1, &str[i], sizeof(char));
 		i++;
 	}
+	return (i);
 }
 
-int	main(int argc, char **argv)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
-	i = 1;
-	argc = 0;
-	while (argv[i])
+	i = 0;
+	while (src[i])
 	{
-		ft_putstr(argv[i]);
-		write(1, "\n", 1);
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dest;
+
+	dest = (char *)malloc(ft_strlen(src) + 1);
+	if (dest == NULL)
+		return (NULL);
+	ft_strcpy(dest, src);
+	return (dest);
+}
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	char *src = "Hello 42!";
+
+	char *dest = ft_strdup(src);
+	printf("%s\n", dest);
+	free(dest);
 	return (0);
 }
+*/

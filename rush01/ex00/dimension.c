@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   dimension.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 09:24:32 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/01 09:27:20 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/12/03 12:40:49 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/12/03 12:44:53 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#include "dimension.h"	
 
-void	ft_putstr(char *str)
+int	ft_get_dimension(char *input)
 {
 	int	i;
+	int	count;
 
 	i = 0;
-	while (str[i] != '\0')
+	count = 0;
+	while (input[i])
 	{
-		write(1, &str[i], sizeof(char));
+		if (input[i] >= '1' && input[i] <= '9')
+			count++;
 		i++;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	argc = 0;
-	ft_putstr(argv[0]);
-	write(1, "\n", 1);
+	if (input[i - 1] == ' ')
+		return (0);
+	if (count % 4 == 0)
+		return (count / 4);
 	return (0);
 }
