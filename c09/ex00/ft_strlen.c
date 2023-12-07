@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 08:07:24 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 17:16:50 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 08:21:00 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/29 17:19:19 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strstr(char *str, char *to_find)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	if (to_find[0])
-		return (str);
 	while (str[i])
 	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1])
-				return (&str[i]);
-			j++;
-		}
 		i++;
 	}
-	return (0);
+	return (i);
 }
 /*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-    printf("%s\n", ft_strstr("Hello 42!", " "));
-    printf("%s\n", ft_strstr("Hello 42!", "50"));
-    return (0);
+	printf("%d", ft_strlen("Hello 42!"));
+
+	return (0);
 }
 */

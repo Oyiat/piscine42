@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 08:27:56 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/04 11:08:28 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:53:35 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -67,7 +67,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	return (final);
 }
-/*
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -79,4 +78,3 @@ int	main(int argc, char **argv)
 	free(final);
 	return (0);
 }
-*/

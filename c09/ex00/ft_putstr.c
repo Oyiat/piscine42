@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 08:07:24 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 17:16:50 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 08:13:35 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/29 17:19:53 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strstr(char *str, char *to_find)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	if (to_find[0])
-		return (str);
-	while (str[i])
+	while (str[i] != '\0')
 	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1])
-				return (&str[i]);
-			j++;
-		}
+		write(1, &str[i], sizeof(char));
 		i++;
 	}
-	return (0);
 }
 /*
-#include <stdio.h>
-
-int main(void)
+int	main(void)
 {
-    printf("%s\n", ft_strstr("Hello 42!", " "));
-    printf("%s\n", ft_strstr("Hello 42!", "50"));
-    return (0);
+	ft_putstr("Hello 42!");
+
+	return (0);
 }
 */
