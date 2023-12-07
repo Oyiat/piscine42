@@ -1,8 +1,15 @@
 NAME = ft_tail
 
-SOURCES = ft_tail.c
+SOURCES_DIR = srcs
+HEADERS_DIR = includes
 
-HEADER = ft_tail.h
+SOURCES = $(SOURCES_DIR)/ft_tail.c \
+		  $(SOURCES_DIR)/ft_atoi.c \
+		  $(SOURCES_DIR)/ft_putstr.c \
+		  $(SOURCES_DIR)/ft_str_is_numeric.c \
+		  $(SOURCES_DIR)/ft_strlen.c
+
+HEADER = $(HEADERS_DIR)/ft_ft.h
 
 OBJECTS = $(SOURCES:.c=.o)
 

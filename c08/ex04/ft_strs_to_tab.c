@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
-#include "ft_strs_to_tab.h"
+#include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
 {
@@ -38,23 +38,31 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
+char	*ft_strdup(char *src)
+{
+	char	*dest;
+
+	dest = (char *)malloc(ft_strlen(src) + 1);
+	if (dest == NULL)
+		return (NULL);
+	ft_strcpy(dest, src);
+	return (dest);
+}
+
 struct	s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	struct s_stock_str	*strs;
 	int					i;
 
 	i = 0;
-	strs = (struct s_stock_str *)malloc(ac * sizeof(struct s_stock_str));
+	strs = (struct s_stock_str *)malloc((ac + 1) * sizeof(struct s_stock_str));
 	if (strs == NULL)
 		return (NULL);
 	while (i < ac)
 	{
 		strs[i].size = ft_strlen(av[i]);
 		strs[i].str = av[i];
-		strs[i].copy = (char *)malloc((strs[i].size + 1) * sizeof(char));
-		if (strs[i].copy == NULL)
-			return (NULL);
-		ft_strcpy(strs[i].copy, av[i]);
+		strs[i].copy = ft_strdup(av[i]);
 		i++;
 	}
 	strs[i].str = 0;
@@ -77,4 +85,5 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	free(strs);
-}*/
+}
+*/
