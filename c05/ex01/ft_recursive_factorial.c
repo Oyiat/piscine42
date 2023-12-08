@@ -17,7 +17,7 @@ int	ft_recursive_factorial(int nb)
 		return (ft_recursive_factorial(nb - 1) * nb);
 	return (1);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
@@ -27,4 +27,3 @@ int	main(void)
 	printf("%d\n", ft_recursive_factorial(0));
 	printf("%d\n", ft_recursive_factorial(-5));
 }
-*/

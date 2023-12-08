@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:40:30 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/30 17:11:04 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:28:10 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_sqrt(int nb)
@@ -22,12 +22,12 @@ int	ft_sqrt(int nb)
 	}
 	return (sqrt);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
 {
-	printf("%d", ft_sqrt(1));
+	printf("%d", ft_sqrt(2147395600));
 	return (0);
 }
-*/
+

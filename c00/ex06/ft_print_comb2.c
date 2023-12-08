@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:37:35 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/07 17:37:25 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:24:01 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -16,38 +16,48 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_comb(void)
+void	ft_print_comb(char i, char j, char k, char l)
+{
+	ft_putchar(i);
+	ft_putchar(j);
+	ft_putchar(' ');
+	ft_putchar(k);
+	ft_putchar(l);
+	if (i != '9' || j != '8' || k != '9' || l != '9')
+		write(1, ", ", 2);
+}
+
+void	ft_print_comb2(void)
 {
 	char	i;
 	char	j;
 	char	k;
+	char	l;
 
-	i = '0';
-	while (i <= '7')
+	i = '/';
+	while (++i <= '9')
 	{
-		j = i + 1;
-		while (j <= '8')
+		j = '/';
+		while (++j <= '9')
 		{
-			k = j + 1;
-			while (k <= '9')
+			k = '/';
+			while (++k <= '9')
 			{
-				ft_putchar(i);
-				ft_putchar(j);
-				ft_putchar(k);
-				if (i != '7' || j != '8' || k != '9')
-					write(1, ", ", 2);
-				k++;
+				l = '/';
+				while (++l <= '9')
+				{
+					if (i < k || (i == k && j < l))
+						ft_print_comb(i, j, k, l);
+				}
 			}
-			j++;
 		}
-		i++;
 	}
 	ft_putchar('\n');
 }
 /*
-int main(void)
+int main()
 {
-	ft_print_comb();
-	return (0);
+    ft_print_comb2();
+    return 0;
 }
 */

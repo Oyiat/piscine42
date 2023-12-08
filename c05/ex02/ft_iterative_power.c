@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 08:10:38 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/05 16:36:12 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/07 13:27:06 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_iterative_power(int nb, int power)
@@ -31,5 +31,6 @@ int	main(void)
 {
 	printf("%d\n", ft_iterative_power(2, 0));
 	printf("%d\n", ft_iterative_power(0, 1));
+	printf("%d\n", ft_iterative_power(0, 0));
 	return (0);
 }

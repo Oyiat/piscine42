@@ -9,7 +9,7 @@
 /*   Updated: 2023/12/06 12:58:03 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_display_file.h"
+#include "../includes/ft_ft.h"
 
 void	ft_putstr(int fd, char *str)
 {

@@ -6,10 +6,19 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 11:19:02 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/07 10:11:52 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:51:46 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/ft_ft.h"
+
+void	ft_display_error(int error)
+{
+	if (error == 1)
+	{
+		ft_putstr(STDERR, "ft_tail: option requires an argument -- 'c'\n");
+		ft_putstr(STDERR, "Try 'ft_tail --help' for more information.\n");
+	}
+}
 
 int	ft_get_last_bytes(int ac, char **av, int *i)
 {
@@ -18,7 +27,15 @@ int	ft_get_last_bytes(int ac, char **av, int *i)
 	last_bytes = 0;
 	if (av[1][0] == '-' && av[1][1] == 'c')
 	{
+		if (ac == 2)
+		{
+			ft_display_error(1);
+		}
 		last_bytes = ft_atoi(av[1] + 2);
+		if (last_bytes == -1)
+		{
+			ft_display_error(2);
+		}
 		if (ac > 3 && ft_str_is_numeric(av[2]))
 		{
 			*i = 3;
@@ -56,11 +73,11 @@ void	ft_tail(int ac, char **av)
 		file = open(av[i], O_RDONLY);
 		if (file < 0)
 		{
-			ft_putstr(STDERR, "ft_tail: cannot open '");
+			/*ft_putstr(STDERR, "ft_tail: cannot open '");
 			ft_putstr(STDERR, av[i]);
 			ft_putstr(STDERR, "' for reading: ");
 			ft_putstr(STDERR, strerror(errno));
-			ft_putstr(STDERR, "\n");
+			ft_putstr(STDERR, "\n");*/
 		}
 		else
 			ft_display_file(file, last_bytes);
@@ -72,4 +89,5 @@ void	ft_tail(int ac, char **av)
 int	main(int argc, char **argv)
 {
 	ft_tail(argc, argv);
+	return (0);
 }

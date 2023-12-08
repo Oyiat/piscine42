@@ -1,8 +1,12 @@
 NAME = ft_cat
 
-SOURCES = ft_cat.c
+SOURCES_DIR = srcs
+HEADERS_DIR = includes
 
-HEADER = ft_cat.h
+SOURCES = $(SOURCES_DIR)/ft_cat.c \
+		  $(SOURCES_DIR)/ft_putstr.c \
+
+HEADER = $(HEADERS_DIR)/ft_ft.h
 
 OBJECTS = $(SOURCES:.c=.o)
 

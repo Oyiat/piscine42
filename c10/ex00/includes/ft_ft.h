@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cat.h                                           :+:      :+:    :+:   */
+/*   ft_ft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 11:18:35 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/06 14:14:03 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/12/06 10:21:05 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/12/07 12:12:31 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_CAT_H
-# define FT_CAT_H
+#ifndef FT_FT_H
+# define FT_FT_H
 
 # define STDOUT 1
 # define STDERR 2
-# define SIZE 29999
+# define SIZE 4096
+# define FILE_NAME_MISSING_ERROR -1
+# define TOO_MANY_ARGUMENTS_ERROR -2
+# define CANNOT_OPEN_FILE_ERROR -3
 
 # include <unistd.h>
 # include <fcntl.h>
-# include <string.h>
-# include <errno.h>
 
+int		ft_is_argument_valid(int ac, char **av);
 void	ft_putstr(int fd, char *str);
 void	ft_display_file(int file);
-void    ft_cat(int ac, char **av);
+
 #endif

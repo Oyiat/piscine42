@@ -1,47 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 13:10:03 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/06 08:20:13 by jlefonde         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	count_chars(char *str, char *charset)
 {
+	int count;
 	int	i;
 
+	count = 0;
 	i = 0;
 	while (str[i])
 	{
+		if (str[i] != charset[0] && str[i] != charset[1])
+			count++;
 		i++;
 	}
-	return (i);
-}
-
-char	*ft_strstr(char *str, char *to_find)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (str[i + j] && str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == 0)
-				return (str + i);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	return (count);
 }
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
@@ -62,45 +36,58 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-char	*ft_strdup(char *src)
+char	**ft_split(char *str, char *charset)
 {
-	char	*dest;
-
-	dest = (char *)malloc(ft_strlen(src) + 1);
-	if (dest == NULL)
-		return (NULL);
-	ft_strncpy(dest, src, ft_strlen(src) + 1);
-	return (dest);
-}
-
-char **ft_split(char *str, char *charset)
-{
-	int		i;
-	int		len;
-	char	**result;
-	char	*substring;
+	int	i;
+	int	j;
+	int	char_count;
+	int	len;
+	char **result;
 
 	i = 0;
-	result = NULL;
-	len = 0;
-	substring = NULL;
+	j = 0;
+	char_count = count_chars(str, charset);
+	result = (char **)malloc((char_count + 1) * sizeof(char *));
+	if (result == NULL)
+		return (NULL);
 	while (str[i])
 	{
-		substring = ft_strstr(&str[i], charset);
-		if (substring)
+		if (str[i] != charset[0] && str[i] != charset[1])
 		{
-			len = substring - &str[i];
-			printf("%d\n", len);
-			//char *t = ft_strdup(&str[i]);
+			len = 1;
+			while (str[i + len] && str[i + len] != charset[0] && str[i + len] != charset[1])
+			{
+				len++;
+			}
+			result[j] = (char *)malloc((len + 1) * sizeof(char));
+			if (result[j] == NULL)
+				return (NULL);
+			ft_strncpy(result[j], &str[i], len);
+			result[j][len] = '\0';
 			i += len;
-        }
-		i++;
-    }
-    return result;
+			j++;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	result[j] = 0;
+	return (result);
 }
 
-int main()
-{
-    ft_split("Hello 42! 43! 44!", "l!");
+int main() {
+    int	i;
+    char **result = ft_split("Hello 42! 43! 44!", " ");
+
+	i = 0;
+    while(result[i])
+	{
+       	printf("%s\n", result[i]);
+        free(result[i]);
+		i++;
+    }
+    free(result);
     return 0;
 }
+

@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 14:19:53 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 12:17:25 by jlefonde         ###   ########.fr       */
+/*   Created: 2023/11/24 08:13:35 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/11/24 11:27:09 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strcmp(char *s1, char *s2)
+#include <unistd.h>
+
+void	ft_putstr(int fd, char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	while (str[i])
 	{
-		if (s1[i] != s2[i])
-		{
-			if (s1[i] > s2[i])
-				return (1);
-			return (-1);
-		}
+		write(fd, &str[i], sizeof(char));
 		i++;
 	}
-	return (0);
 }
 /*
-#include <stdio.h>
-
-int	main()
+int	main(void)
 {
-	printf("%d\n", ft_strcmp("Hello 42!", "Hello 42!"));
-	printf("%d\n", ft_strcmp("Hello 42!", "Hello"));
-	printf("%d\n", ft_strcmp("Hello", "Hello 42!"));
-	printf("%d\n", ft_strcmp("", ""));
+	ft_putstr("Hello 42!");
+
+	return (0);
 }
 */

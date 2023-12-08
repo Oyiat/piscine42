@@ -1,8 +1,11 @@
 NAME = ft_display_file
 
-SOURCES = ft_display_file.c
+SOURCES_DIR = srcs
+HEADERS_DIR = includes
 
-HEADER = ft_display_file.h
+SOURCES = $(SOURCES_DIR)/ft_display_file.c
+
+HEADER = $(HEADERS_DIR)/ft_ft.h
 
 OBJECTS = $(SOURCES:.c=.o)
 

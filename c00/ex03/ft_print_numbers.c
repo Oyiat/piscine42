@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 10:26:20 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/26 10:03:40 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:54:29 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -23,3 +23,11 @@ void	ft_print_numbers(void)
 		digit++;
 	}
 }
+
+/*
+int main(void)
+{
+	ft_print_numbers();
+	return (0);
+}
+*/

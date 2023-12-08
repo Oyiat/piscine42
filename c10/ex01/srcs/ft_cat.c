@@ -6,22 +6,10 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 11:19:02 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/06 15:24:05 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/07 12:09:47 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_cat.h"
-
-void	ft_putstr(int fd, char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(fd, &str[i], sizeof(char));
-		i++;
-	}
-}
+#include "../includes/ft_ft.h"
 
 void	ft_display_file(int file)
 {
@@ -35,7 +23,7 @@ void	ft_display_file(int file)
 void	ft_cat(int ac, char **av)
 {
 	int	i;
-	int file;
+	int	file;
 
 	i = 1;
 	while (i < ac)

@@ -6,10 +6,10 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 08:08:02 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/05 14:39:58 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:46:50 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -24,24 +24,20 @@ int	ft_strlen(char *str)
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	dest_length;
-	unsigned int	src_length;
 	unsigned int	i;
 
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
 	dest_length = ft_strlen(dest);
-	src_length = ft_strlen(src);
 	i = 0;
-	while (i < size - dest_length - 1 && src[i])
+	while (src[i] != '\0' && dest_length + 1 < size)
 	{
-		dest[i + dest_length] = src[i];
+		dest[dest_length] = src[i];
+		dest_length++;
 		i++;
 	}
-	if (size != 0)
-	{
-		dest[i + dest_length] = '\0';
-	}
-	if ((dest_length + src_length) < size)
-		return (dest_length + src_length);
-	return (size);
+	dest[dest_length] = '\0';
+	return (ft_strlen(dest) + ft_strlen(&src[i]));
 }
 /*
 #include <stdio.h>

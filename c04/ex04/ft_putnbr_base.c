@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:35:37 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/30 11:46:41 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:06:54 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -90,7 +90,6 @@ void	ft_putnbr_base(int nbr, char *base)
 		}
 	}
 }
-/*
 int	main(void)
 {
 	ft_putnbr_base(42, "0123456789");
@@ -115,4 +114,4 @@ int	main(void)
 	ft_putnbr_base(2147483647, "0123456789");
 	return (0);
 }
-*/
+
