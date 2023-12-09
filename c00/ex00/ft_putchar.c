@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
-// Display the character passed as a parameter
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);

@@ -1,17 +1,41 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/08 08:25:31 by jlefonde          #+#    #+#             */
+/*   Updated: 2023/12/09 10:36:54 by jlefonde         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
 #include <stdlib.h>
 
+int	is_in_charset(char c, char *charset)
+{
+	int	i;
+
+	i = 0;
+	while (charset[i])
+	{
+		if (charset[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	count_chars(char *str, char *charset)
 {
-	int count;
+	int	count;
 	int	i;
 
 	count = 0;
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] != charset[0] && str[i] != charset[1])
+		if (!is_in_charset(str[i], charset))
 			count++;
 		i++;
 	}
@@ -38,11 +62,11 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 char	**ft_split(char *str, char *charset)
 {
-	int	i;
-	int	j;
-	int	char_count;
-	int	len;
-	char **result;
+	int		i;
+	int		j;
+	int		char_count;
+	int		len;
+	char	**result;
 
 	i = 0;
 	j = 0;
@@ -52,13 +76,11 @@ char	**ft_split(char *str, char *charset)
 		return (NULL);
 	while (str[i])
 	{
-		if (str[i] != charset[0] && str[i] != charset[1])
+		if (!is_in_charset(str[i], charset))
 		{
 			len = 1;
-			while (str[i + len] && str[i + len] != charset[0] && str[i + len] != charset[1])
-			{
+			while (str[i + len] && !is_in_charset(str[i + len], charset))
 				len++;
-			}
 			result[j] = (char *)malloc((len + 1) * sizeof(char));
 			if (result[j] == NULL)
 				return (NULL);
@@ -68,17 +90,17 @@ char	**ft_split(char *str, char *charset)
 			j++;
 		}
 		else
-		{
 			i++;
-		}
 	}
 	result[j] = 0;
 	return (result);
 }
 
+#include <stdio.h>
+
 int main() {
     int	i;
-    char **result = ft_split("Hello 42! 43! 44!", " ");
+    char **result = ft_split("!Hello\t42!!\n 43!\n\t 44!", "!");
 
 	i = 0;
     while(result[i])
@@ -90,4 +112,3 @@ int main() {
     free(result);
     return 0;
 }
-

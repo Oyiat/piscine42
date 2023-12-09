@@ -6,32 +6,28 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 07:31:51 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/11/28 11:52:19 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/09 07:58:24 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	unsigned int	length;
 	unsigned int	i;
 
-	length = 0;
+	if (dest == 0 || src == 0)
+		return (0);
 	i = 0;
-	while (i < size - 1 && src[i])
+	while (src[i] && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
-		length++;
 	}
-	while (i < size - 1)
-	{
-		dest[i] = '\0';
+	dest[i] = '\0';
+	while (src[i])
 		i++;
-	}
-	return (length);
+	return (i);
 }
 /*
 #include <stdio.h>
-
 int main(void) {
     char str1_dest[50];
     char str2_dest[50];
