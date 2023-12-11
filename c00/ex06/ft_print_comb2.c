@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 11:37:35 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/07 18:24:01 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:10:19 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -52,7 +52,6 @@ void	ft_print_comb2(void)
 			}
 		}
 	}
-	ft_putchar('\n');
 }
 /*
 int main()

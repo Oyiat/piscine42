@@ -13,23 +13,21 @@ OBJECTS = $(SOURCES:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+AR = ar -rcs
 RM = rm -f
 
-all: $(NAME)
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HEADERS_DIR}
 
-$(NAME): $(OBJECTS)
-	@$(AR) $(NAME) $(OBJECTS)
+${NAME}: ${OBJECTS}
+	${AR} ${NAME} ${OBJECTS}
 
-%.o: $(SOURCES_DIR)/%.c
-	@$(CC) $(CFLAGS) -I$(HEADERS_DIR) -c $< -o $@
+all: ${NAME}
 
 clean:
-	@$(RM) $(OBJECTS)
+	${RM} ${OBJECTS}
 
 fclean: clean
-	@$(RM) $(NAME)
+	${RM} ${NAME}
 
 re: fclean all
-
-.PHONY: all clean fclean re
