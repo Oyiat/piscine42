@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 07:37:38 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/04 13:38:43 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/11 10:52:19 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -29,7 +29,6 @@ int	*ft_range(int min, int max)
 	}
 	return (ints);
 }
-/*
 #include <stdio.h>
 
 int	main()
@@ -38,7 +37,7 @@ int	main()
 	int *ints;
 
 	i = 0;
-	ints = ft_range(0, 11);
+	ints = ft_range(0, 0);
 	while (i < 11)
 	{
 		printf("%d ", ints[i]);
@@ -47,4 +46,3 @@ int	main()
 	free(ints);
 	return (0);
 }
-*/

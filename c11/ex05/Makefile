@@ -4,7 +4,7 @@ SOURCES_DIR = srcs
 HEADERS_DIR = includes
 
 SOURCES = $(SOURCES_DIR)/main.c \
-                  $(SOURCES_DIR)/ft_operations.c \
+		  $(SOURCES_DIR)/ft_operations.c \
 		  $(SOURCES_DIR)/ft_do_op.c \
 		  $(SOURCES_DIR)/ft_atoi.c \
 		  $(SOURCES_DIR)/ft_putchar.c \

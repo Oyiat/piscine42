@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 {
 	char *final;
 
-	final = ft_strjoin(argc, argv, "->");
+	final = ft_strjoin(argc, argv, "");
 	printf("%s", final);
 	free(final);
 	return (0);

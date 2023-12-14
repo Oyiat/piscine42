@@ -6,7 +6,7 @@
 /*   By: jlefonde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 09:55:34 by jlefonde          #+#    #+#             */
-/*   Updated: 2023/12/10 09:57:44 by jlefonde         ###   ########.fr       */
+/*   Updated: 2023/12/13 07:59:33 by jlefonde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strcmp(char *s1, char *s2)
@@ -27,7 +27,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int		i;
 	int		sorted;
